@@ -1,0 +1,12 @@
+﻿@using HelloDotNetWeb.Cores.Entities
+@model HelloDotNetWeb.Models.ProductListModel
+
+<div style="width: 300px; height: 100px; background: #ccc">
+    day la danh sach san pham:
+    @foreach (Product sp in Model.DanhSachSanPham)
+    {
+        <div>
+            @sp.Id - @sp.ProductName
+        </div>
+    }
+</div>

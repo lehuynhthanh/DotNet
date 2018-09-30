@@ -1,0 +1,31 @@
+﻿@model HelloDotNetWeb.Models.IndexModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    
+    @Model.OwnerName
+    
+
+<div>
+    <form method="post" action="@Url.Action("Demo", "Product")">
+        <input type="text" name="ProductName"/> <br/>
+        <input type="text" name="Des"/> <br/>
+        <button type="submit">Submit Data</button>
+    </form>
+    
+    @Html.Partial("_ProductList", Model.ProductList)
+    
+
+</div>
+</body>
+</html>
