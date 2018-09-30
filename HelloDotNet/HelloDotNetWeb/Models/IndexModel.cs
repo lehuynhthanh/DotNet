@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+using HelloDotNetWeb.Cores.Entities;
 
 namespace HelloDotNetWeb.Models
 {
     public class IndexModel
     {
         public string OwnerName { get; set; }
-        public ProductListModel ProductList { get; set; }
+        public List<Product> DanhSachSanPham { get; set; }
+        public string TenDanhMuc { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HelloDotNetWeb.Cores;
 using HelloDotNetWeb.Cores.Entities;
 using HelloDotNetWeb.Models;
 
@@ -13,22 +14,21 @@ namespace HelloDotNetWeb.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            var dssp = new List<Product>();
 
-            var productListModel = new ProductListModel
-            {
-                DanhSachSanPham = dssp
-            };
+            var db = new HelloDotNetDB();
+            var dssp = db.ProductTable.ToList();
+            var danhmuc = db.CategoryTable.FirstOrDefault(o => o.Id == 3);
+
+
+
+
+
 
 
             var m = new IndexModel();
             m.OwnerName = "Le Huynh Thanh";
-            m.ProductList = productListModel;
-
-
-
-
-
+            m.DanhSachSanPham = dssp;
+            m.TenDanhMuc = danhmuc == null ? string.Empty : danhmuc.CategoryName;
 
             return View(m);
         }

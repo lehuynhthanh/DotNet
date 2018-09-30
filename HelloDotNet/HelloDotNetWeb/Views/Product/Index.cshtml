@@ -13,7 +13,7 @@
 <body>
 
     
-    @Model.OwnerName
+    @Model.OwnerName - @Model.TenDanhMuc
     
 
 <div>
@@ -23,7 +23,7 @@
         <button type="submit">Submit Data</button>
     </form>
     
-    @Html.Partial("_ProductList", Model.ProductList)
+    @Html.Partial("_ProductList", Model.DanhSachSanPham)
     
 
 </div>
